@@ -1,0 +1,222 @@
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--color-darkgray);
+  background: var(--color-white);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: rgb(0, 113, 179);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.main-header {
+  background: var(--color-orange);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.main-nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6px 10px;
+}
+
+.main-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.main-nav-list a {
+  color: var(--color-white);
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+  padding: 4px 2px;
+  border-radius: 6px;
+
+  font-size: 12px;
+  line-height: 1.1;
+}
+
+.main-nav-list a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+}
+
+.brand a {
+  padding: 2px 2px;
+}
+
+.secondary-nav-item {
+  display: none;
+}
+
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.main-image {
+  position: relative;
+}
+
+.primary-image {
+  width: 100%;
+}
+
+.share-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  background: var(--color-white);
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.share-button svg {
+  display: block;
+}
+
+
+.main-info {
+  padding: 16px;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.nieuw {
+  display: inline-block;
+  padding: 3px 8px;
+  margin-bottom: 8px;
+
+  color: var(--color-white);
+  background: var(--color-orange);
+  border-radius: 4px;
+
+  font-size: 12px;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+.postcode-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.postcode {
+  margin: 0;
+  color: rgb(77, 77, 77);
+}
+
+.price {
+  margin: 10px 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.main-info-list {
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+.main-info-list dt {
+  color: rgb(77, 77, 77);
+  font-size: 12px;
+}
+
+.main-info-list dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+
+.omschrijving {
+  padding: 16px;
+}
+
+.omschrijving h2 {
+  margin: 0 0 10px 0;
+}
+
+.omschrijving p {
+  margin: 0;
+}
+
+
+.kenmerken {
+  padding: 0 16px 20px 16px;
+}
+
+.kenmerken h2 {
+  margin: 0 0 10px 0;
+}
+
+.card {
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 12px;
+  background: var(--color-white);
+}
+
+.card h3 {
+  margin: 0 0 10px 0;
+}
+
+.card dl {
+  margin: 0;
+}
+
+.card dt {
+  padding: 10px 0 6px 0;
+  color: rgb(77, 77, 77);
+  border-top: 1px solid rgb(230, 230, 230);
+  font-size: 14px;
+}
+
+.card dt:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.card dd {
+  margin: 0;
+  padding: 0 0 10px 0;
+}
