@@ -1,0 +1,101 @@
+
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/font/Proxima-Nova-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  /* Typography */
+  --font-family-base: "Proxima Nova", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  --font-size-h1: 24px;
+  --font-size-h2: 20px;
+  --font-size-h3: 16px;
+
+  --font-size-p: 16px;
+  --font-size-a: 16px;
+
+  /* Line-heights */
+  --line-height-heading: 1.1;
+  --line-height-body: 1.5;
+
+  /* Weights */
+  --font-weight-h3: 600;
+
+  /* Primary colors */
+  --color-orange: #ff9b21;
+  --color-brown: #6a281c;
+  --color-white: #ffffff;
+  --color-offwhite: #f8f0e6;
+  --color-lightblue: #e5f6ff;
+  --color-blue: #2a87d0;
+
+  /* Secondary colors */
+  --color-darkgray: #333333;
+  --color-felblauw: #64c1ed;
+  --color-lichtroze: #f0dedd;
+  --color-lichtgroen: #e3f6e3;
+  --color-roze: #d6757d;
+  --color-groen: #589f7e;
+
+  /* Buttons */
+  --button-color: rgb(0, 113, 179);
+  --button-border: 1px solid rgb(0, 113, 179);
+  --button-radius: 4px;
+}
+
+
+html {
+  font-family: var(--font-family-base);
+}
+
+body {
+  font-family: var(--font-family-base);
+}
+
+/* Typography */
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-heading);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-heading);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-h3);
+  line-height: var(--line-height-heading);
+}
+
+p {
+  font-size: var(--font-size-p);
+  line-height: var(--line-height-body);
+}
+
+a {
+  font-size: var(--font-size-a);
+}
+
+
+button,
+.btn {
+  color: var(--button-color);
+  border: var(--button-border);
+  border-radius: var(--button-radius);
+  background: transparent;
+  cursor: pointer;
+}
+
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--button-color);
+  outline-offset: 2px;
+}
