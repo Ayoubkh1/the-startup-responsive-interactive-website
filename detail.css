@@ -1,3 +1,5 @@
+
+
 *,
 *::before,
 *::after {
@@ -16,14 +18,7 @@ img {
   height: auto;
 }
 
-a {
-  color: rgb(0, 113, 179);
-  text-decoration: none;
-}
 
-a:hover {
-  text-decoration: underline;
-}
 
 .main-header {
   background: var(--color-orange);
@@ -36,6 +31,14 @@ a:hover {
   max-width: 1100px;
   margin: 0 auto;
   padding: 6px 10px;
+
+  @media (min-width: 768px) {
+    padding: 10px 16px;
+
+    @media (min-width: 1024px) {
+      padding: 12px 16px;
+    }
+  }
 }
 
 .main-nav-list {
@@ -47,68 +50,107 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-}
 
-.main-nav-list a {
-  color: var(--color-white);
-  text-decoration: none;
+  a {
+    color: var(--color-white);
+    text-decoration: none;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-  gap: 4px;
-  padding: 4px 2px;
-  border-radius: 6px;
+    gap: 4px;
+    padding: 4px 2px;
+    border-radius: 6px;
 
-  font-size: 12px;
-  line-height: 1.1;
-}
+    font-size: 12px;
+    line-height: 1.1;
 
-.main-nav-list a:hover {
-  background: rgba(255, 255, 255, 0.12);
-  text-decoration: none;
-}
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+  }
 
-
-.brand a {
   
-  flex-direction: row;
-  padding: 2px 2px;
-  gap: 0;
-  line-height: 0; 
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+    gap: 14px;
+
+    > li:nth-last-child(3) {
+      margin-left: auto;
+    }
+
+    @media (min-width: 1024px) {
+      gap: 16px;
+    }
+  }
 }
 
-.funda-logo {
-  width: 88px;
-  height: 32px;
-  display: block;
-  flex: 0 0 auto;
-}
+.brand {
+  a {
+    flex-direction: row;
+    gap: 0;
+    line-height: 0;
+  }
 
-
-.brand svg {
-  max-width: none;
+  svg {
+    max-width: none;
+  }
 }
 
 .secondary-nav-item {
   display: none;
+
+  @media (min-width: 768px) {
+    display: list-item;
+
+    @media (min-width: 1024px) {
+      display: list-item;
+    }
+  }
 }
 
-.page {
-  max-width: 1100px;
-  margin: 0 auto;
+
+
+main {
+  
+
+  @media (min-width: 768px) {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    
+    padding: 0 16px 24px;
+
+    @media (min-width: 1024px) {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      grid-template-areas:
+        "image info"
+        "omschrijving omschrijving"
+        "kenmerken kenmerken";
+      column-gap: 22px;
+      row-gap: 18px;
+    }
+  }
 }
+
+
 
 .main-image {
   position: relative;
+
+  @media (min-width: 1024px) {
+    grid-area: image;
+    border-radius: 12px;
+    overflow: hidden;
+  }
 }
 
 .primary-image {
   width: 100%;
 }
-
 
 .image-actions {
   position: absolute;
@@ -116,54 +158,70 @@ a:hover {
   right: 12px;
   display: flex;
   gap: 10px;
+
+  @media (min-width: 768px) {
+    top: 14px;
+    right: 14px;
+
+    @media (min-width: 1024px) {
+      top: 16px;
+      right: 16px;
+      gap: 12px;
+    }
+  }
 }
 
-.share-button {
-  background: var(--color-white);
-  border: 1px solid rgb(230, 230, 230);
-  border-radius: 8px;
-  padding: 10px 12px;
-  cursor: pointer;
-}
-
-.share-button svg {
-  display: block;
-}
-
+.share-button,
 .favorite-button {
   background: var(--color-white);
   border: 1px solid rgb(230, 230, 230);
   border-radius: 8px;
   padding: 10px 12px;
   cursor: pointer;
+}
+
+.favorite-button {
   display: grid;
   place-items: center;
+
+  svg {
+    display: block;
+
+    path {
+      fill: none;
+      stroke: #0071b3;
+      transition: fill 0.15s ease, transform 0.15s ease;
+    }
+  }
+
+  &.is-liked {
+    svg {
+      transform: scale(1.05);
+
+      path {
+        fill: #0071b3;
+      }
+    }
+  }
 }
 
-.favorite-button svg {
-  display: block;
-}
 
-
-.favorite-button svg path {
-  fill: none;
-  stroke: #0071B3;
-  transition: fill 0.15s ease, transform 0.15s ease;
-}
-
-
-.favorite-button.is-liked svg path {
-  fill: #0071B3;
-}
-
-
-.favorite-button.is-liked svg {
-  transform: scale(1.05);
-}
 
 .main-info {
   padding: 16px;
   border-bottom: 1px solid rgb(230, 230, 230);
+
+  @media (min-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (min-width: 1024px) {
+      grid-area: info;
+      border-bottom: none;
+      padding: 0;
+      align-self: start;
+    }
+  }
 }
 
 .nieuw {
@@ -184,6 +242,16 @@ a:hover {
   display: flex;
   align-items: baseline;
   gap: 10px;
+
+  
+  a {
+    color: var(--button-color);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .postcode {
@@ -202,36 +270,76 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 10px 18px;
+
+  dt {
+    color: rgb(77, 77, 77);
+    font-size: 12px;
+  }
+
+  dd {
+    margin: 0;
+    font-weight: 600;
+  }
 }
 
-.main-info-list dt {
-  color: rgb(77, 77, 77);
-  font-size: 12px;
-}
 
-.main-info-list dd {
-  margin: 0;
-  font-weight: 600;
-}
 
 .omschrijving {
   padding: 16px;
+
+  h2 {
+    margin: 0 0 10px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (min-width: 1024px) {
+      grid-area: omschrijving;
+      padding: 0;
+    }
+  }
 }
 
-.omschrijving h2 {
-  margin: 0 0 10px 0;
-}
 
-.omschrijving p {
-  margin: 0;
-}
 
 .kenmerken {
   padding: 0 16px 20px 16px;
-}
 
-.kenmerken h2 {
-  margin: 0 0 10px 0;
+  h2 {
+    margin: 0 0 10px 0;
+  }
+
+  @media (min-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 28px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    > h2 {
+      grid-column: 1 / -1;
+    }
+
+    @media (min-width: 1024px) {
+      grid-area: kenmerken;
+      padding: 0;
+
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+
+      > h2 {
+        margin-bottom: 6px;
+      }
+    }
+  }
 }
 
 .card {
@@ -240,29 +348,37 @@ a:hover {
   padding: 12px;
   margin-top: 12px;
   background: var(--color-white);
-}
 
-.card h3 {
-  margin: 0 0 10px 0;
-}
+  h3 {
+    margin: 0 0 10px 0;
+  }
 
-.card dl {
-  margin: 0;
-}
+  dl {
+    margin: 0;
+  }
 
-.card dt {
-  padding: 10px 0 6px 0;
-  color: rgb(77, 77, 77);
-  border-top: 1px solid rgb(230, 230, 230);
-  font-size: 14px;
-}
+  dt {
+    padding: 10px 0 6px 0;
+    color: rgb(77, 77, 77);
+    border-top: 1px solid rgb(230, 230, 230);
+    font-size: 14px;
 
-.card dt:first-of-type {
-  border-top: none;
-  padding-top: 0;
-}
+    &:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
 
-.card dd {
-  margin: 0;
-  padding: 0 0 10px 0;
+  dd {
+    margin: 0;
+    padding: 0 0 10px 0;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+
+    @media (min-width: 1024px) {
+      margin-top: 0;
+    }
+  }
 }
